@@ -51,7 +51,7 @@ header {
   height: 0;
   width: 20%;
   background-color: #F3E8F0;
-  position: fixed;
+  position: absolute;
   right: 0;
   transition: 500ms; }
   #monPanier #contenuPanier {
@@ -61,9 +61,92 @@ header {
   #monPanier #voirMonpanier {
     display: none; }
 
+#produit {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  padding: 1rem; }
+  #produit .imageProduit {
+    margin: auto;
+    flex: 1; }
+  #produit .descriptionProduit {
+    margin-top: 3rem;
+    flex: 2; }
+    #produit .descriptionProduit h2 {
+      font-size: 3rem; }
+    #produit .descriptionProduit p {
+      font-size: 2rem;
+      margin-top: 1rem; }
+    #produit .descriptionProduit a {
+      display: block;
+      width: 30rem;
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 2.5rem;
+      text-align: center;
+      background-color: grey;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 1s; }
+      #produit .descriptionProduit a:hover {
+        background-color: black; }
+  #produit img {
+    width: 700px;
+    height: 500px; }
+  #produit .descriptionProduit {
+    margin-left: 1rem; }
+  #produit select {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem; }
+
+#confirmation {
+  display: none;
+  width: 60%;
+  height: 100px;
+  margin: auto;
+  text-align: center; }
+
+.conteneur {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 60%;
+  justify-content: center; }
+  .conteneur .formulaireCommande {
+    width: 50%;
+    background-color: #DBC5CA;
+    text-align: center;
+    padding: 1rem; }
+    .conteneur .formulaireCommande input {
+      width: 20rem;
+      margin-top: 1rem;
+      height: 2.5rem;
+      font-size: 2rem; }
+  .conteneur #panier {
+    width: 50%;
+    background-color: #F9E3E0;
+    text-align: center;
+    padding: 1rem; }
+    .conteneur #panier .contenuPanier {
+      margin-top: 1rem;
+      text-align: left;
+      display: flex;
+      flex-direction: row; }
+      .conteneur #panier .contenuPanier img {
+        width: 50px;
+        height: 40px; }
+      .conteneur #panier .contenuPanier p {
+        margin-top: 0.7rem;
+        margin-left: 1rem; }
+
 * {
   margin: 0;
   padding: 0; }
+
+body {
+  background-color: white; }
 
 #container {
   display: flex;
@@ -72,33 +155,81 @@ header {
   height: 100%; }
 
 #content {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
   width: 100%; }
-  #content .blocProduit {
-    width: 25%;
-    border: 1px solid black;
-    border-radius: 3px;
-    margin: 1rem;
-    text-align: center; }
-    #content .blocProduit img {
-      margin-top: 1rem; }
-    #content .blocProduit h2 {
-      background-color: #7451EB;
-      color: white; }
 
 .produit1 {
   width: 100%;
   height: 500px;
-  background-color: #DBC5CA; }
+  display: flex;
+  background-color: #DBC5CA;
+  flex-direction: row; }
+  .produit1 .imageProduit {
+    margin: auto;
+    flex: 1; }
+  .produit1 .descriptionProduit {
+    margin-top: 3rem;
+    flex: 2; }
+    .produit1 .descriptionProduit h2 {
+      font-size: 3rem; }
+    .produit1 .descriptionProduit p {
+      font-size: 2rem;
+      margin-top: 1rem; }
+    .produit1 .descriptionProduit a {
+      display: block;
+      width: 30rem;
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 2.5rem;
+      text-align: center;
+      background-color: grey;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 1s; }
+      .produit1 .descriptionProduit a:hover {
+        background-color: black; }
+  .produit1 .imageProduit {
+    padding-left: 1rem;
+    flex: 1; }
 
 .produit2 {
   width: 100%;
   height: 500px;
-  background-color: #F9E3E0; }
+  display: flex;
+  background-color: #F9E3E0;
+  flex-direction: row-reverse;
+  justify-content: center; }
+  .produit2 .imageProduit {
+    margin: auto;
+    flex: 1; }
+  .produit2 .descriptionProduit {
+    margin-top: 3rem;
+    flex: 2; }
+    .produit2 .descriptionProduit h2 {
+      font-size: 3rem; }
+    .produit2 .descriptionProduit p {
+      font-size: 2rem;
+      margin-top: 1rem; }
+    .produit2 .descriptionProduit a {
+      display: block;
+      width: 30rem;
+      height: 3rem;
+      line-height: 3rem;
+      font-size: 2.5rem;
+      text-align: center;
+      background-color: grey;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      transition: background-color 1s; }
+      .produit2 .descriptionProduit a:hover {
+        background-color: black; }
+  .produit2 .imageProduit {
+    text-align: right;
+    margin-right: 1rem; }
+  .produit2 .descriptionProduit {
+    text-align: right; }
+    .produit2 .descriptionProduit a {
+      margin-left: auto; }
 
 /*# sourceMappingURL=default.css.map */

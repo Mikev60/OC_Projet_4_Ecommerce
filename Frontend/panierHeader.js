@@ -12,6 +12,7 @@ panier.produits.forEach(element => {
 document.getElementById('deroulerPanier').addEventListener("click", function(e) {
   e.preventDefault();
   document.getElementById('monPanier').style.height = "200px";
+  document.getElementById('monPanier').style.display = "block";
   document.getElementById('contenuPanier').style.display = "block";
   document.getElementById('fermerPanier').style.display = "block";
   document.getElementById('voirMonpanier').style.display = "block";

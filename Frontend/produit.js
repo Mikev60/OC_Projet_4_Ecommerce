@@ -17,10 +17,16 @@ if (searchUrl.has("produit")) {
 
         //Affichage du produit
         if (urlProduit == element.name) {
-          document.getElementById('produit').innerHTML += '<a href="#" class="lienProduit">' + element.name + '</a>';
-          document.getElementById('produit').innerHTML += '<p>' + element.description + '</p>';
-          document.getElementById('produit').innerHTML += '<p>' + element.price + '</p>';
-          document.getElementById('produit').innerHTML += '<a href="" id="ajoutPanier"> Ajouter au panier </a>';
+          document.getElementById('imageProduit').innerHTML += '<img src="' + element.imageUrl + '" />';
+          document.getElementById('descriptionProduit').innerHTML += '<h2>' + element.name + '</h2>';
+          document.getElementById('descriptionProduit').innerHTML += '<p>' + element.description + '</p>';
+          document.getElementById('descriptionProduit').innerHTML += '<p>' + element.price + ' €</p>';
+          document.getElementById('descriptionProduit').innerHTML += '<p><strong>Options de personnalisation :</strong></p>';
+          document.getElementById('descriptionProduit').innerHTML += '<select name="personnalisation" id="personnalisation"></select>';
+          for (var i = 0; i < element.lenses.length; i++) {
+            document.getElementById("personnalisation").innerHTML += '<option value="test"> '+element.lenses[i]+' </option> ';
+          }
+          document.getElementById('descriptionProduit').innerHTML += '<a href="" id="ajoutPanier"> Ajouter au panier </a>';
           // Gestion du panier
           document.getElementById('ajoutPanier').addEventListener('click', function(e) {
             e.preventDefault();

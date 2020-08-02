@@ -1,8 +1,46 @@
-
 #confirmation {
   display: none;
-  width: 1000px;
+  width: 60%;
   height: 100px;
   margin:auto;
-  background-color: green;
+  text-align: center;
+}
+.conteneur {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 60%;
+  justify-content: center;
+  .formulaireCommande{
+    width: 50%;
+    background-color: $primary1;
+    text-align: center;
+    padding: 1rem;
+    input {
+      width: 20rem;
+      margin-top: 1rem;
+      height: 2.5rem;
+      font-size:2rem;
+    }
+  }
+  #panier {
+    width: 50%;
+    background-color: $primary2;
+    text-align: center;
+    padding: 1rem;
+    .contenuPanier {
+      margin-top: 1rem;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 50px;
+        height: 40px;
+      }
+      p {
+        margin-top: 0.7rem;
+        margin-left: 1rem; 
+      }
+    }
+  }
 }

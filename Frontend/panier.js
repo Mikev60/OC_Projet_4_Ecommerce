@@ -14,7 +14,7 @@ if (!localStorage.getItem("panier")) {
   panier = JSON.parse(panier);
   console.log(panier); // A supprimer
   panier.produits.forEach(element => {
-      document.getElementById('panier').innerHTML += '<p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" class="article' + i + '"> Retirer du panier </a> - Position' + i + ' </p>';
+      document.getElementById('panier').innerHTML += '<div class="contenuPanier"><img src="'+element.imageUrl+'" /><p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" class="article' + i + '"> Retirer du panier </a> - Position' + i + ' </p></div>';
       document.querySelector('.article' + i + '').addEventListener('click', function(e) {
         e.preventDefault();
         console.log("ok");

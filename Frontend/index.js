@@ -1,4 +1,4 @@
-let i = 0;
+let j = 0;
 
 fetch('http://localhost:3000/api/cameras')
 .then(response => {
@@ -8,13 +8,13 @@ fetch('http://localhost:3000/api/cameras')
   cameras.forEach(element => {
 
     //Conversion de l'url pour une URL plus lisible (seo ?)
-    if(i%2 == 0) {
-      document.getElementById('content').innerHTML += '<div class="produit1"><h2>'+element.name+'</h2> <img width=100 height=100 src="'+element.imageUrl+'"/> <p>'+element.price+' €</p> <br> <a href="produit.html?produit='+element.name+'" class="lienProduit">Voir la fiche produit</a></div>';
+    if(j%2 == 0) {
+      document.getElementById('content').innerHTML += '<div class="produit1"><div class="imageProduit"><img width=500 height=400 src="'+element.imageUrl+'"/></div><div class="descriptionProduit"> <h2>'+element.name+'</h2> <p>'+element.description+' </p> <p>'+element.price+' €</p> <br> <a href="produit.html?produit='+element.name+'" class="lienProduit">Voir la fiche produit</a></div></div>';
     }
     else {
-      document.getElementById('content').innerHTML += '<div class="produit2"><h2>'+element.name+'</h2> <img width=100 height=100 src="'+element.imageUrl+'"/> <p>'+element.price+' €</p> <br> <a href="produit.html?produit='+element.name+'" class="lienProduit">Voir la fiche produit</a></div>';
+      document.getElementById('content').innerHTML += '<div class="produit2"><div class="imageProduit"><img width=500 height=400 src="'+element.imageUrl+'"/></div><div class="descriptionProduit"> <h2>'+element.name+'</h2> <p>'+element.description+' </p><p>'+element.price+' €</p> <br> <a href="produit.html?produit='+element.name+'" class="lienProduit">Voir la fiche produit</a></div></div>';
 
     }
-    i++;
+    j++;
   })
 })
