@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Page produit</title>
+    <link rel="stylesheet" href="CSS/default.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+      <nav class="menu">
+        <a href="index.html">Acceuil</a> -
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="panier">
+        <div class="test">
+
+        </div>
+      </div>
+    </header>
+    <div id="container">
+    <div id="confirmation">
+
+    </div>
+    <div class="formulaireCommande">
+      <form id="form" action="#">
+        <p>
+        <label for="Nom"></label>
+        <input type="text" name="Nom" value="Nom" id="nom" required>
+        </p>
+        <p>
+        <label for="Prénom"></label>
+        <input type="text" name="Prénom" value="Prénom" id="prenom" required>
+        </p>
+        <p>
+        <label for="Adresse"></label>
+        <input type="text" name="Adresse" value="Adresse" id="adresse" required>
+        </p>
+        <p>
+        <label for="Ville"></label>
+        <input type="text" name="Ville" value="Ville" id="ville" required>
+        </p>
+        <p>
+        <label for="Email"></label>
+        <input type="email" name="Email" value="Email" id="email" required>
+        </p>
+        <p>
+        <input type="submit" name="submit" value="Commander">
+        </p>
+      </form>
+    </div>
+    <div id="panier">
+      <h2>Votre panier</h2>
+
+    </div>
+    <script src="panier.js" charset="utf-8"></script>
+    <script src="commande.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -47,6 +47,20 @@ header {
       header .panier .test:hover {
         transform: scale(1.5); }
 
+#monPanier {
+  height: 0;
+  width: 20%;
+  background-color: #F3E8F0;
+  position: fixed;
+  right: 0;
+  transition: 500ms; }
+  #monPanier #contenuPanier {
+    display: none; }
+  #monPanier #fermerPanier {
+    display: none; }
+  #monPanier #voirMonpanier {
+    display: none; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -64,7 +78,7 @@ header {
   margin: auto;
   align-items: center;
   justify-content: center;
-  width: 60%; }
+  width: 100%; }
   #content .blocProduit {
     width: 25%;
     border: 1px solid black;
@@ -77,23 +91,14 @@ header {
       background-color: #7451EB;
       color: white; }
 
-#monPanier {
-  height: 0;
-  width: 20%;
-  background-color: #F3E8F0;
-  position: fixed;
-  right: 0;
-  transition: 500ms; }
-  #monPanier #contenuPanier {
-    display: none; }
-  #monPanier #fermerPanier {
-    display: none; }
+.produit1 {
+  width: 100%;
+  height: 500px;
+  background-color: #DBC5CA; }
 
-#confirmation {
-  display: none;
-  width: 1000px;
-  height: 100px;
-  margin: auto;
-  background-color: green; }
+.produit2 {
+  width: 100%;
+  height: 500px;
+  background-color: #F9E3E0; }
 
 /*# sourceMappingURL=default.css.map */

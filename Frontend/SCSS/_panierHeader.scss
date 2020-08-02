@@ -1,0 +1,18 @@
+#monPanier {
+  height: 0;
+  width: 20%;
+  background-color: #F3E8F0;
+  position: fixed;
+  right:0;
+  transition: 500ms;
+  #contenuPanier
+  {
+    display:none;
+  }
+  #fermerPanier {
+    display:none;
+  }
+  #voirMonpanier {
+    display:none;
+  }
+}

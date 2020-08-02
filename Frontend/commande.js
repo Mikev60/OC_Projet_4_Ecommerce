@@ -55,8 +55,9 @@ document.getElementById("form").addEventListener("submit", function(e) {
     return response.json();
   }).then(function(resultat) {
     alert(resultat.orderId);
-    document.getElementById('confirmation').style.display = "block"; 
+    document.getElementById('confirmation').style.display = "block";
     document.getElementById('confirmation').innerHTML += '<p> Nous vous remercions pour votre commande, veuillez noter le numéro : ' + resultat.orderId + ' </p>';
+    localStorage.clear();
   })
 
 });

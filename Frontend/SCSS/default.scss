@@ -1,4 +1,5 @@
 @import 'header';
+@import 'panierHeader';
 
 * {
   margin:0;
@@ -18,7 +19,7 @@
   margin:auto;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 100%;
   .blocProduit {
     width: 25%;
     border:1px solid black;
@@ -34,26 +35,14 @@
     }
   }
 }
-#monPanier {
-  height: 0;
-  width: 20%;
-  background-color: #F3E8F0;
-  position: fixed;
-  right:0;
-  transition: 500ms;
-  #contenuPanier
-  {
-    display:none;
-  }
-  #fermerPanier {
-    display:none;
-  }
-}
 
-#confirmation {
-  display: none;
-  width: 1000px;
-  height: 100px;
-  margin:auto;
-  background-color: green;
+.produit1 {
+  width: 100%;
+  height:500px;
+  background-color: #DBC5CA;
+}
+.produit2 {
+  width: 100%;
+  height:500px;
+  background-color: #F9E3E0;
 }
