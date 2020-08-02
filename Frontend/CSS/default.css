@@ -1,0 +1,99 @@
+header {
+  height: 3rem;
+  width: 100%;
+  background-color: #F3E8F0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 3rem;
+  color: #7451EB; }
+  header p {
+    color: #7451EB; }
+  header a {
+    color: #7451EB;
+    font-size: 1.5rem; }
+  header .logo {
+    margin-left: 1rem; }
+    header .logo img {
+      margin-top: 1rem;
+      width: 140px;
+      height: 50px; }
+  header .panier {
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("../images/shoppingCart.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: normal; }
+    header .panier .test {
+      color: white;
+      font-size: 1rem;
+      width: 1rem;
+      height: 1.2rem;
+      margin-left: 0.7rem;
+      text-align: center;
+      border-radius: 100%;
+      background-color: purple;
+      margin-top: 0.7rem;
+      transform: scale(1);
+      transition: transform 500ms; }
+      header .panier .test a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem; }
+      header .panier .test:hover {
+        transform: scale(1.5); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+#container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%; }
+
+#content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  width: 60%; }
+  #content .blocProduit {
+    width: 25%;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin: 1rem;
+    text-align: center; }
+    #content .blocProduit img {
+      margin-top: 1rem; }
+    #content .blocProduit h2 {
+      background-color: #7451EB;
+      color: white; }
+
+#monPanier {
+  height: 0;
+  width: 20%;
+  background-color: #F3E8F0;
+  position: fixed;
+  right: 0;
+  transition: 500ms; }
+  #monPanier #contenuPanier {
+    display: none; }
+  #monPanier #fermerPanier {
+    display: none; }
+
+#confirmation {
+  display: none;
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  background-color: green; }
+
+/*# sourceMappingURL=default.css.map */

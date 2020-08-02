@@ -6,9 +6,21 @@ fetch('http://localhost:3000/api/cameras')
   cameras.forEach(element => {
 
     //Conversion de l'url pour une URL plus lisible (seo ?)
-    let urlProduit = element.name.replace(' ','-');
-    document.getElementById('content').innerHTML += '<a href="produit.html?produit='+urlProduit+'" class="lienProduit">'+element.name+'</a>';
-    document.getElementById('content').innerHTML += '<p>'+element.description+'</p>';
-    document.getElementById('content').innerHTML += '<p>'+element.price+'</p>';
+    document.getElementById('content').innerHTML += '<div class="blocProduit"><h2>'+element.name+'</h2> <img width=100 height=100 src="'+element.imageUrl+'"/> <p>'+element.price+' €</p> <br> <a href="produit.html?produit='+element.name+'" class="lienProduit">Voir la fiche produit</a></div>';
   })
+})
+
+//Panier déroulant - Ouverture
+document.getElementById('deroulerPanier').addEventListener("click", function(e) {
+  e.preventDefault();
+  document.getElementById('monPanier').style.height = "200px";
+  document.getElementById('contenuPanier').style.display = "block";
+  document.getElementById('fermerPanier').style.display = "block";
+})
+//Panier déroulant - Fermeture
+document.getElementById('fermerPanier').addEventListener("click", function(e) {
+  e.preventDefault();
+  document.getElementById('monPanier').style.height = "0px";
+  document.getElementById('contenuPanier').style.display = "none";
+  document.getElementById('fermerPanier').style.display = "none";
 })
