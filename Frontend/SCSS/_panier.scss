@@ -3,7 +3,17 @@
   width: 60%;
   height: 100px;
   margin:auto;
+  margin-top: 1rem; 
   text-align: center;
+  border:1px solid green;
+  background-color: #dfffd3;
+  color: green;
+  @media all and (max-width: 1100px) {
+    width: 80%;
+  }
+  @media all and (max-width: 600px) {
+    width: 90%;
+  }
 }
 .conteneur {
   display: flex;
@@ -11,22 +21,24 @@
   margin: auto;
   width: 60%;
   justify-content: center;
+  padding: 1rem;
   .formulaireCommande{
     width: 50%;
-    background-color: $primary1;
+    background-color: #eae5e5;
     text-align: center;
     padding: 1rem;
     input {
       width: 20rem;
       margin-top: 1rem;
       height: 2.5rem;
-      font-size:2rem;
+      font-size:1.5rem;
     }
   }
   #panier {
     width: 50%;
     background-color: $primary2;
     text-align: center;
+    margin-left: 2rem;
     padding: 1rem;
     .contenuPanier {
       margin-top: 1rem;
@@ -39,7 +51,39 @@
       }
       p {
         margin-top: 0.7rem;
-        margin-left: 1rem; 
+        margin-left: 1rem;
+      }
+    }
+  }
+  @media all and(max-width: 1100px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width:80%;
+    #panier {
+      width: 80%;
+      margin-bottom: 1rem;
+      margin-left: 0;
+    }
+    .formulaireCommande {
+      width: 80%;
+    }
+  }
+  @media all and(max-width: 600px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+    #panier {
+      width: 90%;
+      margin-bottom: 1rem;
+      margin-left: 0;
+    }
+    .formulaireCommande {
+      width: 90%;
+      input {
+        font-size: 1rem;
+        width:13rem;
       }
     }
   }

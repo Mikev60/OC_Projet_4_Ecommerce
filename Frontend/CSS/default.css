@@ -1,24 +1,26 @@
 header {
-  height: 3rem;
+  height: 3.5rem;
   width: 100%;
-  background-color: #F3E8F0;
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  line-height: 3rem;
-  color: #7451EB; }
+  line-height: 3.5rem;
+  color: white; }
   header p {
-    color: #7451EB; }
+    color: white; }
   header a {
-    color: #7451EB;
-    font-size: 1.5rem; }
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none; }
   header .logo {
-    margin-left: 1rem; }
-    header .logo img {
-      margin-top: 1rem;
-      width: 140px;
-      height: 50px; }
+    margin-left: 1rem;
+    margin-top: 0.5rem; }
+    header .logo span {
+      font-size: 3rem;
+      line-height: 3.5rem;
+      font-family: 'Mogra', cursive; }
   header .panier {
     margin-right: 1rem;
     width: 2.5rem;
@@ -32,11 +34,11 @@ header {
       color: white;
       font-size: 1rem;
       width: 1rem;
-      height: 1.2rem;
-      margin-left: 0.7rem;
+      height: 1.1rem;
+      margin-left: 0.9rem;
       text-align: center;
       border-radius: 100%;
-      background-color: purple;
+      background-color: grey;
       margin-top: 0.7rem;
       transform: scale(1);
       transition: transform 500ms; }
@@ -46,43 +48,89 @@ header {
         font-size: 1rem; }
       header .panier .test:hover {
         transform: scale(1.5); }
+  @media all and (max-width: 400px) {
+    header .logo span {
+      font-size: 1.5rem; } }
+  @media all and (max-width: 500px) {
+    header .logo span {
+      font-size: 2rem; } }
 
 #monPanier {
-  height: 0;
+  min-height: 0;
   width: 20%;
-  background-color: #F3E8F0;
+  background-color: #c9c3c3;
   position: absolute;
   right: 0;
   transition: 500ms; }
+  #monPanier h2 {
+    margin-bottom: 1rem; }
   #monPanier #contenuPanier {
     display: none; }
   #monPanier #fermerPanier {
-    display: none; }
+    display: none;
+    margin-top: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: grey;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 1s; }
+    #monPanier #fermerPanier:hover {
+      background-color: black; }
   #monPanier #voirMonpanier {
-    display: none; }
+    display: none;
+    height: 1rem;
+    margin-top: 1rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: grey;
+    border-radius: 3px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 1s; }
+    #monPanier #voirMonpanier:hover {
+      background-color: black; }
+  @media all and (max-width: 800px) {
+    #monPanier {
+      width: 40%; } }
+  @media all and (max-width: 400px) {
+    #monPanier {
+      width: 100%; } }
 
 #produit {
   width: 100%;
-  height: 500px;
+  padding: 1rem;
   display: flex;
-  padding: 1rem; }
+  padding: 1rem;
+  background-color: #dbd6d6; }
+  #produit img {
+    width: 500px;
+    height: 400px; }
   #produit .imageProduit {
     margin: auto;
     flex: 1; }
   #produit .descriptionProduit {
     margin-top: 3rem;
-    flex: 2; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+    padding: 1rem; }
     #produit .descriptionProduit h2 {
-      font-size: 3rem; }
+      font-size: 2rem; }
     #produit .descriptionProduit p {
-      font-size: 2rem;
+      font-size: 1rem;
       margin-top: 1rem; }
     #produit .descriptionProduit a {
       display: block;
-      width: 30rem;
+      width: 25rem;
       height: 3rem;
       line-height: 3rem;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       text-align: center;
       background-color: grey;
       border-radius: 5px;
@@ -91,43 +139,106 @@ header {
       transition: background-color 1s; }
       #produit .descriptionProduit a:hover {
         background-color: black; }
+  @media all and (max-width: 1000px) {
+    #produit {
+      flex-direction: column; }
+      #produit img {
+        width: 300px;
+        height: 200px; }
+      #produit .descriptionProduit {
+        width: 80%;
+        margin: 0; }
+        #produit .descriptionProduit a {
+          width: 20rem; } }
+  @media all and (max-width: 400px) {
+    #produit img {
+      width: 200px;
+      height: 150px; }
+    #produit .descriptionProduit {
+      width: 80%;
+      margin: 0; }
+      #produit .descriptionProduit a {
+        width: 15rem; } }
   #produit img {
     width: 700px;
     height: 500px; }
   #produit .descriptionProduit {
     margin-left: 1rem; }
   #produit select {
-    margin-top: 1rem;
     margin-bottom: 1rem;
-    font-size: 2rem; }
+    font-size: 1rem;
+    width: 100px; }
+  @media all and (max-width: 1150px) {
+    #produit {
+      flex-direction: column; }
+      #produit img {
+        width: 400px;
+        height: 300px; }
+      #produit .descriptionProduit, #produit .imageProduit {
+        margin: auto;
+        padding: 0; }
+        #produit .descriptionProduit a, #produit .imageProduit a {
+          margin: auto;
+          width: 20rem; }
+        #produit .descriptionProduit select, #produit .imageProduit select {
+          margin: auto;
+          margin-top: 1rem;
+          margin-bottom: 1rem; } }
+  @media all and (max-width: 450px) {
+    #produit img {
+      width: 200px;
+      height: 150px; }
+    #produit select {
+      margin: auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem; }
+    #produit .descriptionProduit, #produit .imageProduit {
+      margin: auto;
+      padding: 0; }
+      #produit .descriptionProduit a, #produit .imageProduit a {
+        margin: auto;
+        text-align: center;
+        width: 15rem; } }
 
 #confirmation {
   display: none;
   width: 60%;
   height: 100px;
   margin: auto;
-  text-align: center; }
+  margin-top: 1rem;
+  text-align: center;
+  border: 1px solid green;
+  background-color: #dfffd3;
+  color: green; }
+  @media all and (max-width: 1100px) {
+    #confirmation {
+      width: 80%; } }
+  @media all and (max-width: 600px) {
+    #confirmation {
+      width: 90%; } }
 
 .conteneur {
   display: flex;
   flex-direction: row;
   margin: auto;
   width: 60%;
-  justify-content: center; }
+  justify-content: center;
+  padding: 1rem; }
   .conteneur .formulaireCommande {
     width: 50%;
-    background-color: #DBC5CA;
+    background-color: #eae5e5;
     text-align: center;
     padding: 1rem; }
     .conteneur .formulaireCommande input {
       width: 20rem;
       margin-top: 1rem;
       height: 2.5rem;
-      font-size: 2rem; }
+      font-size: 1.5rem; }
   .conteneur #panier {
     width: 50%;
-    background-color: #F9E3E0;
+    background-color: #dbd6d6;
     text-align: center;
+    margin-left: 2rem;
     padding: 1rem; }
     .conteneur #panier .contenuPanier {
       margin-top: 1rem;
@@ -140,6 +251,33 @@ header {
       .conteneur #panier .contenuPanier p {
         margin-top: 0.7rem;
         margin-left: 1rem; }
+  @media all and (max-width: 1100px) {
+    .conteneur {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 80%; }
+      .conteneur #panier {
+        width: 80%;
+        margin-bottom: 1rem;
+        margin-left: 0; }
+      .conteneur .formulaireCommande {
+        width: 80%; } }
+  @media all and (max-width: 600px) {
+    .conteneur {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 90%; }
+      .conteneur #panier {
+        width: 90%;
+        margin-bottom: 1rem;
+        margin-left: 0; }
+      .conteneur .formulaireCommande {
+        width: 90%; }
+        .conteneur .formulaireCommande input {
+          font-size: 1rem;
+          width: 13rem; } }
 
 * {
   margin: 0;
@@ -159,27 +297,34 @@ body {
 
 .produit1 {
   width: 100%;
-  height: 500px;
+  padding: 1rem;
   display: flex;
-  background-color: #DBC5CA;
+  background-color: white;
   flex-direction: row; }
+  .produit1 img {
+    width: 500px;
+    height: 400px; }
   .produit1 .imageProduit {
     margin: auto;
     flex: 1; }
   .produit1 .descriptionProduit {
     margin-top: 3rem;
-    flex: 2; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+    padding: 1rem; }
     .produit1 .descriptionProduit h2 {
-      font-size: 3rem; }
+      font-size: 2rem; }
     .produit1 .descriptionProduit p {
-      font-size: 2rem;
+      font-size: 1rem;
       margin-top: 1rem; }
     .produit1 .descriptionProduit a {
       display: block;
-      width: 30rem;
+      width: 25rem;
       height: 3rem;
       line-height: 3rem;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       text-align: center;
       background-color: grey;
       border-radius: 5px;
@@ -188,34 +333,75 @@ body {
       transition: background-color 1s; }
       .produit1 .descriptionProduit a:hover {
         background-color: black; }
+  @media all and (max-width: 1000px) {
+    .produit1 {
+      flex-direction: column; }
+      .produit1 img {
+        width: 300px;
+        height: 200px; }
+      .produit1 .descriptionProduit {
+        width: 80%;
+        margin: 0; }
+        .produit1 .descriptionProduit a {
+          width: 20rem; } }
+  @media all and (max-width: 400px) {
+    .produit1 img {
+      width: 200px;
+      height: 150px; }
+    .produit1 .descriptionProduit {
+      width: 80%;
+      margin: 0; }
+      .produit1 .descriptionProduit a {
+        width: 15rem; } }
   .produit1 .imageProduit {
-    padding-left: 1rem;
-    flex: 1; }
+    flex: 1;
+    text-align: center; }
+  @media all and (max-width: 1000px) {
+    .produit1 {
+      flex-direction: column; }
+      .produit1 .descriptionProduit, .produit1 .imageProduit {
+        text-align: center;
+        width: 90%;
+        margin: 0;
+        flex: none; }
+      .produit1 .descriptionProduit {
+        padding: 0;
+        padding-top: 1rem; }
+      .produit1 a {
+        margin: auto;
+        text-align: center; } }
 
 .produit2 {
   width: 100%;
-  height: 500px;
+  padding: 1rem;
   display: flex;
-  background-color: #F9E3E0;
+  background-color: #dbd6d6;
   flex-direction: row-reverse;
   justify-content: center; }
+  .produit2 img {
+    width: 500px;
+    height: 400px; }
   .produit2 .imageProduit {
     margin: auto;
     flex: 1; }
   .produit2 .descriptionProduit {
     margin-top: 3rem;
-    flex: 2; }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+    padding: 1rem; }
     .produit2 .descriptionProduit h2 {
-      font-size: 3rem; }
+      font-size: 2rem; }
     .produit2 .descriptionProduit p {
-      font-size: 2rem;
+      font-size: 1rem;
       margin-top: 1rem; }
     .produit2 .descriptionProduit a {
       display: block;
-      width: 30rem;
+      width: 25rem;
       height: 3rem;
       line-height: 3rem;
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       text-align: center;
       background-color: grey;
       border-radius: 5px;
@@ -224,12 +410,46 @@ body {
       transition: background-color 1s; }
       .produit2 .descriptionProduit a:hover {
         background-color: black; }
+  @media all and (max-width: 1000px) {
+    .produit2 {
+      flex-direction: column; }
+      .produit2 img {
+        width: 300px;
+        height: 200px; }
+      .produit2 .descriptionProduit {
+        width: 80%;
+        margin: 0; }
+        .produit2 .descriptionProduit a {
+          width: 20rem; } }
+  @media all and (max-width: 400px) {
+    .produit2 img {
+      width: 200px;
+      height: 150px; }
+    .produit2 .descriptionProduit {
+      width: 80%;
+      margin: 0; }
+      .produit2 .descriptionProduit a {
+        width: 15rem; } }
   .produit2 .imageProduit {
-    text-align: right;
-    margin-right: 1rem; }
+    text-align: center;
+    margin-right: 2rem; }
   .produit2 .descriptionProduit {
     text-align: right; }
     .produit2 .descriptionProduit a {
       margin-left: auto; }
+  @media all and (max-width: 1000px) {
+    .produit2 {
+      flex-direction: column; }
+      .produit2 .descriptionProduit, .produit2 .imageProduit {
+        text-align: center;
+        width: 90%;
+        margin: 0;
+        flex: none; }
+      .produit2 .descriptionProduit {
+        padding: 0;
+        padding-top: 1rem; }
+      .produit2 a {
+        margin: auto;
+        text-align: center; } }
 
 /*# sourceMappingURL=default.css.map */

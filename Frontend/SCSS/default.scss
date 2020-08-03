@@ -28,8 +28,25 @@ body {
   background-color: $primary1;
   flex-direction: row;
   .imageProduit {
-  padding-left: 1rem;
   flex: 1;
+  text-align: center;
+  }
+  @media all and(max-width: 1000px) {
+    flex-direction: column;
+    .descriptionProduit, .imageProduit{
+      text-align: center;
+      width:90%;
+      margin: 0;
+      flex:none;
+    }
+    .descriptionProduit {
+      padding:0;
+      padding-top:1rem;
+    }
+    a {
+      margin:auto;
+      text-align: center;
+    }
   }
 }
 .produit2 {
@@ -38,13 +55,30 @@ body {
   flex-direction: row-reverse;
   justify-content: center;
   .imageProduit {
-  text-align: right;
-  margin-right: 1rem;
+  text-align: center;
+  margin-right: 2rem;
   }
   .descriptionProduit {
     text-align: right;
     a {
       margin-left: auto;
+    }
+  }
+  @media all and(max-width: 1000px) {
+    flex-direction: column;
+    .descriptionProduit, .imageProduit{
+      text-align: center;
+      width:90%;
+      margin: 0;
+      flex:none;
+    }
+    .descriptionProduit {
+      padding:0;
+      padding-top:1rem;
+    }
+    a {
+      margin:auto;
+      text-align: center;
     }
   }
 }

@@ -1,18 +1,53 @@
 #monPanier {
-  height: 0;
+  min-height: 0;
   width: 20%;
-  background-color: $bckColorHeader;
+  background-color: #c9c3c3;
   position: absolute;
   right:0;
   transition: 500ms;
+  h2 {
+    margin-bottom: 1rem; 
+  }
   #contenuPanier
   {
     display:none;
   }
   #fermerPanier {
     display:none;
+    margin-top: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: grey;
+    border-radius: 3px;
+    text-decoration: none;
+    color:white;
+    transition: background-color 1s;
+    &:hover{
+      background-color: black;
+    }
   }
   #voirMonpanier {
     display:none;
+    height: 1rem;
+    margin-top: 1rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: grey;
+    border-radius: 3px;
+    text-decoration: none;
+    color:white;
+    transition: background-color 1s;
+    &:hover{
+      background-color: black;
+    }
+  }
+  @media all and (max-width: 800px) {
+    width:40%;
+  }
+  @media all and (max-width: 400px) {
+    width:100%;
   }
 }

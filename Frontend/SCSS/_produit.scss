@@ -1,6 +1,7 @@
 #produit {
   @include produit;
   padding: 1rem;
+  background-color: $primary2;
   img {
     width: 700px;
     height: 500px;
@@ -9,8 +10,48 @@
     margin-left: 1rem;
   }
   select {
-    margin-top: 1rem;
-    margin-bottom: 1rem; 
-    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    width: 100px;
+  }
+  @media all and(max-width: 1150px){
+    flex-direction: column;
+    img {
+      width:400px;
+      height:300px;
+    }
+    .descriptionProduit,.imageProduit {
+      margin:auto;
+      padding:0;
+      a {
+        margin:auto;
+        width: 20rem;
+      }
+      select {
+        margin:auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  @media all and(max-width: 450px){
+    img {
+      width:200px;
+      height:150px;
+    }
+    select {
+      margin:auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .descriptionProduit,.imageProduit{
+      margin:auto;
+      padding:0;
+      a {
+        margin:auto;
+        text-align: center;
+        width: 15rem;
+      }
+    }
   }
 }

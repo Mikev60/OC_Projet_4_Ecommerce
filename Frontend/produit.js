@@ -33,8 +33,10 @@ if (searchUrl.has("produit")) {
             if (localStorage.getItem("panier") == null) {
               let panier = {};
               panier.produits = [];
+              panier.produits.push(element);
               localStorage.setItem('panier', JSON.stringify(panier));
-              alert("Panier créé");
+              alert("Ajouté au panier");
+              majPanier(panier);
             } else {
               let panier = JSON.parse(localStorage.getItem("panier"));
 
@@ -42,6 +44,8 @@ if (searchUrl.has("produit")) {
 
               localStorage.setItem("panier", JSON.stringify(panier));
               alert("Ajouté au panier");
+              document.getElementById('deroulerPanier').innerHTML = panier.produits.length;
+              majPanier(panier);
             }
           })
 
