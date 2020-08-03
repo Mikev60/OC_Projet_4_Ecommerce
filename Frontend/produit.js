@@ -24,10 +24,10 @@ if (searchUrl.has("produit")) {
           document.getElementById('descriptionProduit').innerHTML += '<p><strong>Options de personnalisation :</strong></p>';
           document.getElementById('descriptionProduit').innerHTML += '<select name="personnalisation" id="personnalisation"></select>';
           for (var i = 0; i < element.lenses.length; i++) {
-            document.getElementById("personnalisation").innerHTML += '<option value="test"> '+element.lenses[i]+' </option> ';
+            document.getElementById("personnalisation").innerHTML += '<option value="test"> ' + element.lenses[i] + ' </option> ';
           }
           document.getElementById('descriptionProduit').innerHTML += '<a href="" id="ajoutPanier"> Ajouter au panier </a>';
-          // Gestion du panier
+          // Gestion du panier - Ajout des articles
           document.getElementById('ajoutPanier').addEventListener('click', function(e) {
             e.preventDefault();
             if (localStorage.getItem("panier") == null) {

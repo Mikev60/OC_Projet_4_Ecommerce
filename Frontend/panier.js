@@ -3,8 +3,8 @@ if (!localStorage.getItem("panier")) {
   document.getElementById('panier').innerHTML += '<p> Votre panier est vide</p>';
 } else {
 
-    document.querySelector('#panier h2').innerHTML += ' (<a href="#" id="viderPanier">Vider</a>) ';
-    document.querySelector('#panier h2').innerHTML += '<span id="sommePanier"> </span>';
+  document.querySelector('#panier h2').innerHTML += ' (<a href="#" id="viderPanier">Vider</a>) ';
+  document.querySelector('#panier h2').innerHTML += '<span id="sommePanier"> </span>';
 
   let panier = localStorage.getItem("panier");
   panier = JSON.parse(panier);
@@ -19,69 +19,22 @@ if (!localStorage.getItem("panier")) {
 
 //Suppresion de l'article du panier
 function addListener(i) {
-let panier = localStorage.getItem("panier");
-panier = JSON.parse(panier);
-panier.produits.splice(i, 1);
-localStorage.setItem("panier", JSON.stringify(panier));
-majPanierFinal(panier);
+  let panier = localStorage.getItem("panier");
+  panier = JSON.parse(panier);
+  panier.produits.splice(i, 1);
+  localStorage.setItem("panier", JSON.stringify(panier));
+  majPanierFinal(panier);
 }
 
 // Affichage du panier
-function majPanierFinal (panier) {
-  let i =0;
+function majPanierFinal(panier) {
+  let i = 0;
   let sommePanier = 0;
   document.getElementById("contenuPanierFinal").innerHTML = "";
   panier.produits.forEach(element => {
-      document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="'+element.imageUrl+'" /><p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" onClick="addListener('+i+')"> Retirer du panier </a></p></div>';
-      sommePanier += element.price;
+    document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="' + element.imageUrl + '" /><p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" onClick="addListener(' + i + ')"> Retirer du panier </a></p></div>';
+    sommePanier += element.price;
     i++;
   })
-  document.getElementById('sommePanier').innerHTML = ' - Total : '+sommePanier+' €';
+  document.getElementById('sommePanier').innerHTML = ' - Total : ' + sommePanier + ' €';
 }
-
-
-
-
-
-
-
-
-/*//--------------------------------------------------------Affichage du panier--------------------------------------
-if (!localStorage.getItem("panier")) {
-  document.getElementById('panier').innerHTML += '<p> Votre panier est vide</p>';
-} else {
-
-    document.querySelector('#panier h2').innerHTML += ' (<a href="#" id="viderPanier">Vider</a>) ';
-
-  let i = 0;
-  let panier = localStorage.getItem("panier");
-  let sommePanier = 0;
-  panier = JSON.parse(panier);
-  panier.produits.forEach(element => {
-      document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="'+element.imageUrl+'" /><p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" onClick="addListener('+i+')"> Retirer du panier </a></p></div>';
-      sommePanier += element.price;
-    i++;
-  })
-  document.getElementById('viderPanier').addEventListener('click', function(e) {
-    e.preventDefault();
-    localStorage.clear();
-    alert("Panier vidé");
-  });
-  document.querySelector('#panier h2').innerHTML += ' - Total : '+sommePanier+' €';
-}
-
-//Suppresion de l'article du panier
-function addListener(i) {
-alert(i);
-let panier = localStorage.getItem("panier");
-panier = JSON.parse(panier);
-panier.produits.splice(i, 1);
-console.log(panier.produits);
-localStorage.setItem("panier", JSON.stringify(panier));
-i = 0;
-document.getElementById('contenuPanierFinal').innerHTML = "";
-panier.produits.forEach(element => {
-    document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="'+element.imageUrl+'" /><p><strong>' + element.name + '</strong> - ' + element.price + ' € - <a href="#" onClick="addListener('+i+')"> Retirer du panier </a></p></div>';
-  i++;
-})
-}*/

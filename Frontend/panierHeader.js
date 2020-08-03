@@ -2,10 +2,9 @@ let i = 0;
 let panier = localStorage.getItem("panier");
 panier = JSON.parse(panier);
 
-if(!panier || panier.produits.length === 0) {
+if (!panier || panier.produits.length === 0) {
   document.getElementById('contenuPanier').innerHTML = '<p>Votre panier est vide</p>';
-}
-else{
+} else {
   majPanier(panier);
 }
 
