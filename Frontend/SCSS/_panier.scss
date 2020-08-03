@@ -3,7 +3,7 @@
   width: 60%;
   height: 100px;
   margin:auto;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   text-align: center;
   border:1px solid green;
   background-color: #dfffd3;
@@ -40,6 +40,10 @@
     text-align: center;
     margin-left: 2rem;
     padding: 1rem;
+    a{
+      color:blue;
+      text-decoration: none;
+    }
     .contenuPanier {
       margin-top: 1rem;
       text-align: left;
