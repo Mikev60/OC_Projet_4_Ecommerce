@@ -32,7 +32,7 @@ function majPanierFinal(panier) {
   let sommePanier = 0;
   document.getElementById("contenuPanierFinal").innerHTML = "";
   panier.produits.forEach(element => {
-    document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="' + element.imageUrl + '" /><p><strong>' + element.name + '</strong> ('+element.lenses+') - ' + element.price + ' € - <a href="#" onClick="addListener(' + i + ')"> Retirer du panier </a></p></div>';
+    document.getElementById('contenuPanierFinal').innerHTML += '<div class="contenuPanier"><img src="' + element.imageUrl + '" /><p><strong>' + element.name + '</strong> (' + element.lenses + ') - ' + element.price + ' € - <a href="#" onClick="addListener(' + i + ')"> Retirer du panier </a></p></div>';
     sommePanier += element.price;
     i++;
   })

@@ -2,6 +2,7 @@ let i = 0;
 let panier = localStorage.getItem("panier");
 panier = JSON.parse(panier);
 
+//Affichage vide si panier vide ou localstorage n'existe pas
 if (!panier || panier.produits.length === 0) {
   document.getElementById('contenuPanier').innerHTML = '<p>Votre panier est vide</p>';
 } else {
@@ -30,11 +31,12 @@ document.getElementById('fermerPanier').addEventListener("click", function(e) {
   document.getElementById('monPanier').style.padding = "0";
 })
 
+//Mise à jour du panier dynamique
 function majPanier(panier) {
   document.getElementById('contenuPanier').innerHTML = "<h2> Vos articles : </h2>";
   panier.produits.forEach(element => {
-      document.getElementById('contenuPanier').innerHTML += '<p><strong>' + element.name + '</strong> ('+element.lenses+') - ' + element.price + ' € </p>';
-      document.getElementById('deroulerPanier').innerHTML = panier.produits.length;
+    document.getElementById('contenuPanier').innerHTML += '<p><strong>' + element.name + '</strong> (' + element.lenses + ') - ' + element.price + ' € </p>';
+    document.getElementById('deroulerPanier').innerHTML = panier.produits.length;
     i++;
   })
 }

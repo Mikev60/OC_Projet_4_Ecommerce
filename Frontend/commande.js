@@ -2,6 +2,7 @@
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault();
 
+  //définition des regex pour contrôler les inputs avant envoi au serveur
   let emailSchema = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   let autresChamps = /^[a-zA-Z0-9-]{2,}$/;
 

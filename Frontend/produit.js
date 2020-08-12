@@ -8,8 +8,8 @@ if (searchUrl.has("produit")) {
   // Récupération url et récupération du contenu produit
   let urlProduit = searchUrl.getAll("produit");
 
-  //Requête fetch
-  fetch('http://localhost:3000/api/cameras/'+urlProduit)
+  //Requête fetch puis affichage du produit
+  fetch('http://localhost:3000/api/cameras/' + urlProduit)
     .then(function(response) {
       return response.json();
     })
@@ -24,10 +24,11 @@ if (searchUrl.has("produit")) {
         document.getElementById("personnalisation").innerHTML += '<option value="' + element.lenses[i] + '"> ' + element.lenses[i] + ' </option> ';
       }
       document.getElementById('descriptionProduit').innerHTML += '<a href="" id="ajoutPanier"> Ajouter au panier </a>';
-      // Gestion du panier - Ajout des articles
+
+      // ----------------------------------- Gestion du panier - Ajout des articles -------------------------------------
       document.getElementById('ajoutPanier').addEventListener('click', function(e) {
         e.preventDefault();
-        if (localStorage.getItem("panier") == null) {
+        if (localStorage.getItem("panier") == null) { //si le localstorage existe déjà
           let panier = {};
           panier.produits = [];
           element.lenses = document.getElementById('personnalisation').value;

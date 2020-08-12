@@ -12,7 +12,6 @@ fetch('http://localhost:3000/api/cameras')
         document.getElementById('content').innerHTML += '<div class="produit1"><div class="imageProduit"><img src="' + element.imageUrl + '"/></div><div class="descriptionProduit"> <h2>' + element.name + '</h2> <p>' + element.description + ' </p> <p>' + element.price + ' €</p> <br> <a href="produit.html?produit=' + element._id + '" class="lienProduit">Voir la fiche produit</a></div></div>';
       } else {
         document.getElementById('content').innerHTML += '<div class="produit2"><div class="imageProduit"><img src="' + element.imageUrl + '"/></div><div class="descriptionProduit"> <h2>' + element.name + '</h2> <p>' + element.description + ' </p><p>' + element.price + ' €</p> <br> <a href="produit.html?produit=' + element._id + '" class="lienProduit">Voir la fiche produit</a></div></div>';
-
       }
       j++;
     })
