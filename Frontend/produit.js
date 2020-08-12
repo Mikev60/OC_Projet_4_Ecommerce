@@ -5,7 +5,7 @@ let searchUrl = new URLSearchParams(url);
 if (searchUrl.has("produit")) {
 
 
-  // Récupération url, conversion string et mise en forme pour recherche
+  // Récupération url et récupération du contenu produit
   let urlProduit = searchUrl.getAll("produit");
 
   //Requête fetch
@@ -21,7 +21,7 @@ if (searchUrl.has("produit")) {
       document.getElementById('descriptionProduit').innerHTML += '<p><strong>Options de personnalisation :</strong></p>';
       document.getElementById('descriptionProduit').innerHTML += '<select name="personnalisation" id="personnalisation"></select>';
       for (var i = 0; i < element.lenses.length; i++) {
-        document.getElementById("personnalisation").innerHTML += '<option value="test"> ' + element.lenses[i] + ' </option> ';
+        document.getElementById("personnalisation").innerHTML += '<option value="' + element.lenses[i] + '"> ' + element.lenses[i] + ' </option> ';
       }
       document.getElementById('descriptionProduit').innerHTML += '<a href="" id="ajoutPanier"> Ajouter au panier </a>';
       // Gestion du panier - Ajout des articles
@@ -30,14 +30,19 @@ if (searchUrl.has("produit")) {
         if (localStorage.getItem("panier") == null) {
           let panier = {};
           panier.produits = [];
+          element.lenses = document.getElementById('personnalisation').value;
+          alert(element.lenses);
           panier.produits.push(element);
+          console.log(panier.produits);
           localStorage.setItem('panier', JSON.stringify(panier));
           alert("Ajouté au panier");
           majPanier(panier);
         } else {
           let panier = JSON.parse(localStorage.getItem("panier"));
-
+          element.lenses = document.getElementById('personnalisation').value;
+          alert(element.lenses); 
           panier.produits.push(element);
+          console.log(panier.produits);
 
           localStorage.setItem("panier", JSON.stringify(panier));
           alert("Ajouté au panier");

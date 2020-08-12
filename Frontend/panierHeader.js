@@ -33,8 +33,8 @@ document.getElementById('fermerPanier').addEventListener("click", function(e) {
 function majPanier(panier) {
   document.getElementById('contenuPanier').innerHTML = "<h2> Vos articles : </h2>";
   panier.produits.forEach(element => {
-    document.getElementById('contenuPanier').innerHTML += '<p><strong>' + element.name + '</strong> - ' + element.price + ' € </p>';
-    document.getElementById('deroulerPanier').innerHTML = panier.produits.length;
+      document.getElementById('contenuPanier').innerHTML += '<p><strong>' + element.name + '</strong> ('+element.lenses+') - ' + element.price + ' € </p>';
+      document.getElementById('deroulerPanier').innerHTML = panier.produits.length;
     i++;
   })
 }
