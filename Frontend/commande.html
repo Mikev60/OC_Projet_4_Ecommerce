@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Orinoco</title>
+  <link rel="stylesheet" href="CSS/default.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mogra&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <span>Orinoco</span>
+    </div>
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+    </nav>
+    <div class="panier">
+      <div class="test">
+        <a href="" id="deroulerPanier">0</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="monPanier" id="monPanier">
+      <p id="contenuPanier"></p>
+      <a href="panier.html" id="voirMonpanier">Voir mon panier</a>
+      <a href="#" id="fermerPanier">Fermer</a>
+    </div>
+    <div id="confirmation">
+
+    </div>
+    <div class="conteneur">
+      <div class="formulaireCommande">
+        <h2>Vos informations :</h2>
+        <form id="form" action="#">
+          <p>
+            <label for="nom"></label>
+            <input type="text" name="Nom" id="nom" placeholder="Nom" required>
+          </p>
+          <p>
+            <label for="prenom"></label>
+            <input type="text" name="Prénom" id="prenom" placeholder="Prénom" required>
+          </p>
+          <p>
+            <label for="adresse"></label>
+            <input type="text" name="Adresse" id="adresse" placeholder="Adresse" required>
+          </p>
+          <p>
+            <label for="ville"></label>
+            <input type="text" name="Ville" id="ville" placeholder="Ville" required>
+          </p>
+          <p>
+            <label for="email"></label>
+            <input type="email" name="Email" id="email" placeholder="Email" required>
+          </p>
+          <p>
+            <input type="submit" name="submit" value="Commander">
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="commande.js"></script>
+  <script src="panierHeader.js"></script>
+</body>
+
+</html>

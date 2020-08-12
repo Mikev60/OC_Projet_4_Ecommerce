@@ -31,7 +31,6 @@ if (searchUrl.has("produit")) {
           let panier = {};
           panier.produits = [];
           element.lenses = document.getElementById('personnalisation').value;
-          alert(element.lenses);
           panier.produits.push(element);
           console.log(panier.produits);
           localStorage.setItem('panier', JSON.stringify(panier));
@@ -40,7 +39,6 @@ if (searchUrl.has("produit")) {
         } else {
           let panier = JSON.parse(localStorage.getItem("panier"));
           element.lenses = document.getElementById('personnalisation').value;
-          alert(element.lenses); 
           panier.produits.push(element);
           console.log(panier.produits);
 
