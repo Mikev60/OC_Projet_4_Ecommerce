@@ -15,4 +15,4 @@ fetch('http://localhost:3000/api/cameras')
       }
       j++;
     })
-  })
+  }).catch(error => res.status(500).json({ error }));

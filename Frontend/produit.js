@@ -49,5 +49,5 @@ if (searchUrl.has("produit")) {
           majPanier(panier);
         }
       })
-    })
+    }).catch(error => res.status(500).json({ error }));
 }

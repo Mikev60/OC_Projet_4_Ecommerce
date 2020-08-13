@@ -45,7 +45,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
           document.getElementById('confirmation').style.display = "block";
           document.getElementById('confirmation').innerHTML += '<p> Nous vous remercions pour votre commande, veuillez noter le numéro : ' + resultat.orderId + ' </p>';
           localStorage.clear();
-        })
+        }).catch(error => res.status(500).json({ error }));
       }
     } else {
       alert('Un des champs contient des caractères non autorisés');
