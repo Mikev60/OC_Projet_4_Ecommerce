@@ -4,7 +4,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
 
   //définition des regex pour contrôler les inputs avant envoi au serveur
   let emailSchema = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  let autresChamps = /^[a-zA-Z0-9-]{2,}$/;
+  let autresChamps = /^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ0-9-]{2,}$/;
 
   if (emailSchema.test(document.querySelector("#email").value)) {
     if (autresChamps.test(document.querySelector("#nom").value) && autresChamps.test(document.querySelector("#prenom").value) && autresChamps.test(document.querySelector("#adresse").value) && autresChamps.test(document.querySelector("#ville").value)) {
