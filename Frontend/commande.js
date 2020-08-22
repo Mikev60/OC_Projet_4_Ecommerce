@@ -4,7 +4,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
 
   //définition des regex pour contrôler les inputs avant envoi au serveur
   let emailSchema = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  let autresChamps = /^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ0-9-]{2,}$/;
+  let autresChamps = /^[a-z A-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ0-9-]{2,}$/;
 
   if (emailSchema.test(document.querySelector("#email").value)) {
     if (autresChamps.test(document.querySelector("#nom").value) && autresChamps.test(document.querySelector("#prenom").value) && autresChamps.test(document.querySelector("#adresse").value) && autresChamps.test(document.querySelector("#ville").value)) {
@@ -21,11 +21,13 @@ document.getElementById("form").addEventListener("submit", function(e) {
       let panier = localStorage.getItem("panier");
       panier = JSON.parse(panier);
       let products = [];
+      let sommePanier = 0;
       if (!panier || panier.produits.length === 0) {
         alert("Votre panier est vide, vous ne pouvez pas commander");
       } else {
         panier.produits.forEach(element => {
           products.push(element._id);
+          sommePanier += element.price; 
         });
         console.log(products);
 
@@ -42,9 +44,14 @@ document.getElementById("form").addEventListener("submit", function(e) {
         }).then(function(response) {
           return response.json();
         }).then(function(resultat) {
-          document.getElementById('confirmation').style.display = "block";
-          document.getElementById('confirmation').innerHTML += '<p> Nous vous remercions pour votre commande, veuillez noter le numéro : ' + resultat.orderId + ' </p>';
-          localStorage.clear();
+          let order = {
+            orderId: resultat.orderId,
+            totalAmount: sommePanier
+          }
+          console.log(order.orderId);
+          console.log(order.totalAmount);
+          let orderStorage = localStorage.setItem('order', JSON.stringify(order));
+          document.location.href="confirmation.html"
         }).catch(error => res.status(500).json({ error }));
       }
     } else {

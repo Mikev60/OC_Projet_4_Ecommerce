@@ -28,7 +28,7 @@ if (searchUrl.has("produit")) {
       // ----------------------------------- Gestion du panier - Ajout des articles -------------------------------------
       document.getElementById('ajoutPanier').addEventListener('click', function(e) {
         e.preventDefault();
-        if (localStorage.getItem("panier") == null) { //si le localstorage existe déjà
+        if (localStorage.getItem("panier") == null) { //si le localstorage n'existe pas
           let panier = {};
           panier.produits = [];
           element.lenses = document.getElementById('personnalisation').value;
