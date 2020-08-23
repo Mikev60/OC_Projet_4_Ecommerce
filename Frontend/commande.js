@@ -27,7 +27,7 @@ document.getElementById("form").addEventListener("submit", function(e) {
       } else {
         panier.produits.forEach(element => {
           products.push(element._id);
-          sommePanier += element.price; 
+          sommePanier += element.price;
         });
         console.log(products);
 
@@ -48,11 +48,11 @@ document.getElementById("form").addEventListener("submit", function(e) {
             orderId: resultat.orderId,
             totalAmount: sommePanier
           }
-          console.log(order.orderId);
-          console.log(order.totalAmount);
           let orderStorage = localStorage.setItem('order', JSON.stringify(order));
-          document.location.href="confirmation.html"
-        }).catch(error => res.status(500).json({ error }));
+          document.location.href = "confirmation.html"
+        }).catch(error => res.status(500).json({
+          error
+        }));
       }
     } else {
       alert('Un des champs contient des caractères non autorisés');
